@@ -58,7 +58,7 @@ public struct Benchmark: View {
                     .rotationEffect(Angle(degrees: Double(-225)))
                 
                 VStack{
-                    Text("\(Int(cmtCurrentValue))")
+                    Text(String(Int(cmtCurrentValue)))
                         .font(.system(size: CGFloat(Int(geometery.size.width / 3.5))).bold())
                         .foregroundColor(counterColor)
                     if showLabel {
@@ -77,7 +77,7 @@ public struct Benchmark: View {
                         
                         Spacer()
                         
-                        Text("\(Int(maxValue))")
+                        Text(String(Int(maxValue)))
                             .font(.system(size: geometery.size.width > 250 ? 28 : CGFloat(Int(geometery.size.width / 9))))
                             .foregroundColor(minMaxColor)
                     }
