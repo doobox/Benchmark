@@ -2,7 +2,7 @@
 
 A light weight gauge view written in SwiftUI.
 
-<img src="https://github.com/doobox/DooGauge/blob/Master/gaugePreview.png" width="300">
+<img width="241" alt="gaugePreview" src="https://user-images.githubusercontent.com/1026876/145280587-8897c999-39cb-4f95-b2c7-300d0b898ee5.png">
 
 ## Installation
 
