@@ -6,7 +6,7 @@ A light weight gauge view written in SwiftUI.
 
 ## Installation
 
-Xcode 11 and iOS 15 is required.
+Xcode 11 and iOS 15 or MacOS 10.15 is required.
 
 ### Swift Package Manager
 
