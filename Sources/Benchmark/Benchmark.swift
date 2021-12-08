@@ -14,11 +14,11 @@ public struct Benchmark: View {
     var label: String
     var color1: Color
     var color2: Color
-    var counterColor: Color = .primary
-    var labelColor: Color = .primary
-    var minMaxColor: Color = .primary
-    var showLabel: Bool = true
-    var showMinMax: Bool = true
+    var counterColor: Color
+    var labelColor: Color
+    var minMaxColor: Color
+    var showLabel: Bool
+    var showMinMax: Bool
     
     private var cmtCurrentValue: CGFloat {
         if progress > maxValue {
