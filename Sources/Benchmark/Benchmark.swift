@@ -27,7 +27,7 @@ public struct Benchmark: View {
         return progress
     }
 
-    public init(progress: CGFloat, maxValue: CGFloat, label: String, color1: Color, color2: Color, counterColor: Color, labelColor: Color, minMaxColor: Color, showLabel: Bool, showMinMax: Bool) {
+    public init(progress: CGFloat = 45, maxValue: CGFloat = 180, label: String = "Label", color1: Color = .red, color2: Color = .green, counterColor: Color = .primary, labelColor: Color = .secondary, minMaxColor: Color = .primary, showLabel: Bool = true, showMinMax: Bool = true) {
         self.progress = progress
         self.maxValue = maxValue
         self.label = label
