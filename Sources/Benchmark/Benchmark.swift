@@ -9,16 +9,16 @@ func newGaugeValue(value: CGFloat, from: ClosedRange<CGFloat>) -> CGFloat {
 @available(iOS 13.0, macOS 10.15, *)
 public struct Benchmark: View {
     
-    var progress: CGFloat
-    var maxValue: CGFloat
-    var label: String
-    var color1: Color
-    var color2: Color
-    var counterColor: Color
-    var labelColor: Color
-    var minMaxColor: Color
-    var showLabel: Bool
-    var showMinMax: Bool
+    private var progress: CGFloat
+    private var maxValue: CGFloat
+    private var label: String
+    private var color1: Color
+    private var color2: Color
+    private var counterColor: Color
+    private var labelColor: Color
+    private var minMaxColor: Color
+    private var showLabel: Bool
+    private var showMinMax: Bool
     
     private var cmtCurrentValue: CGFloat {
         if progress > maxValue {
