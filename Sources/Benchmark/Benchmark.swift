@@ -94,7 +94,7 @@ public struct Benchmark: View {
 struct Doo_a_Gauge_Previews: PreviewProvider {
     @available(iOS 13.0.0, *)
     static var previews: some View {
-        Benchmark(progress: 45, maxValue: 180, label: "Hello", color1: .red, color2: .green, counterColor: .primary, labelColor: .secondary, minMaxColor: .primary, showLabel: true, showMinMax: true)
+        Benchmark(progress: 45, maxValue: 180, label: "Label", color1: .red, color2: .green, counterColor: .primary, labelColor: .secondary, minMaxColor: .primary, showLabel: true, showMinMax: true)
             .frame(width: 300)
     }
 }

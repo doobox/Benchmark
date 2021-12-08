@@ -30,7 +30,8 @@ import Benchmark
 ### Instantiate view
 
 ```swift
-Benchmark(currentValue: 199, maxValue: 500, label: "Label", color1: .red, color2: .green, counterColor: .primary, labelColor: .secondary, minMaxColor: .primary, showLabel: true, showMinMax: true)
+Benchmark(progress: 45, maxValue: 180, label: "Label", color1: .red, color2: .green, counterColor: .primary, labelColor: .secondary, minMaxColor: .primary, showLabel: true, showMinMax: true)
+    .frame(width: 300)
 ```
 ## License
 
