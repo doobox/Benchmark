@@ -10,7 +10,7 @@ func newGaugeValue(value: CGFloat, from: ClosedRange<CGFloat>) -> CGFloat {
 public struct Benchmark: View {
     
     private var progressVal: CGFloat
-    private var maxValue: CGFloat
+    private var progressMax: CGFloat
     private var label: String
     private var color1: Color
     private var color2: Color
@@ -21,15 +21,15 @@ public struct Benchmark: View {
     private var showMinMax: Bool
     
     private var cmtCurrentValue: CGFloat {
-        if progressVal > maxValue {
-            return maxValue
+        if progressVal > progressMax {
+            return progressMax
         }
         return progressVal
     }
 
-    public init(progressVal: CGFloat, maxValue: CGFloat, label: String, color1: Color, color2: Color, counterColor: Color, labelColor: Color, gaugeMinMax: Color, showLabel: Bool, showMinMax: Bool) {
+    public init(progressVal: CGFloat, progressMax: CGFloat, label: String, color1: Color, color2: Color, counterColor: Color, labelColor: Color, gaugeMinMax: Color, showLabel: Bool, showMinMax: Bool) {
         self.progressVal = progressVal
-        self.maxValue = maxValue
+        self.progressMax = progressMax
         self.label = label
         self.color1 = color1
         self.color2 = color2
@@ -51,7 +51,7 @@ public struct Benchmark: View {
                     .rotationEffect(Angle(degrees: Double(-225)))
                 
                 Circle()
-                    .trim(from: 0, to: newGaugeValue(value: cmtCurrentValue, from: 0...maxValue))
+                    .trim(from: 0, to: newGaugeValue(value: cmtCurrentValue, from: 0...progressMax))
                     .stroke(style: StrokeStyle.init(lineWidth: CGFloat(Int(geometery.size.width / 10)), lineCap: .round))
                     .foregroundColor(color1)
                     .padding(CGFloat(Int(geometery.size.width / 10)) / 2)
@@ -77,7 +77,7 @@ public struct Benchmark: View {
                         
                         Spacer()
                         
-                        Text("\(Int(maxValue))")
+                        Text("\(Int(progressMax))")
                             .font(.system(size: geometery.size.width > 250 ? 28 : CGFloat(Int(geometery.size.width / 9))))
                             .foregroundColor(gaugeMinMax)
                     }
@@ -95,7 +95,7 @@ public struct Benchmark: View {
 @available(iOS 13.0, macOS 10.15, *)
 struct Doo_a_Gauge_Previews: PreviewProvider {
     static var previews: some View {
-        Benchmark(progressVal: 45, maxValue: 180, label: "Label", color1: .red, color2: .green, counterColor: .primary, labelColor: .secondary, gaugeMinMax: .primary, showLabel: true, showMinMax: true)
+        Benchmark(progressVal: 45, progressMax: 180, label: "Label", color1: .red, color2: .green, counterColor: .primary, labelColor: .secondary, gaugeMinMax: .primary, showLabel: true, showMinMax: true)
             .frame(width: 300)
     }
 }
