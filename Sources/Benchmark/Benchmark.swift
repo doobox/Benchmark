@@ -12,10 +12,10 @@ public struct Benchmark: View {
     private var progressVal: CGFloat
     private var progressMax: CGFloat
     private var label: String
-    private var color1: Color
-    private var color2: Color
+    private var colorOne: Color
+    private var colorTwo: Color
     private var counterColor: Color
-    private var labelColor: Color
+    private var gaugelabelColor: Color
     private var gaugeMinMax: Color
     private var showLabel: Bool
     private var showMinMax: Bool
@@ -27,14 +27,14 @@ public struct Benchmark: View {
         return progressVal
     }
 
-    public init(progressVal: CGFloat, progressMax: CGFloat, label: String, color1: Color, color2: Color, counterColor: Color, labelColor: Color, gaugeMinMax: Color, showLabel: Bool, showMinMax: Bool) {
+    public init(progressVal: CGFloat, progressMax: CGFloat, label: String, colorOne: Color, colorTwo: Color, counterColor: Color, gaugelabelColor: Color, gaugeMinMax: Color, showLabel: Bool, showMinMax: Bool) {
         self.progressVal = progressVal
         self.progressMax = progressMax
         self.label = label
-        self.color1 = color1
-        self.color2 = color2
+        self.colorOne = colorOne
+        self.colorTwo = colorTwo
         self.counterColor = counterColor
-        self.labelColor = labelColor
+        self.gaugelabelColor = gaugelabelColor
         self.gaugeMinMax = gaugeMinMax
         self.showLabel = showLabel
         self.showMinMax = showMinMax
@@ -46,14 +46,14 @@ public struct Benchmark: View {
                 Circle()
                     .trim(from: 0, to: 0.75)
                     .stroke(style: StrokeStyle.init(lineWidth: CGFloat(Int(geometery.size.width / 10)), lineCap: .round))
-                    .foregroundColor(color2)
+                    .foregroundColor(colorTwo)
                     .padding(CGFloat(Int(geometery.size.width / 10)) / 2)
                     .rotationEffect(Angle(degrees: Double(-225)))
                 
                 Circle()
                     .trim(from: 0, to: newGaugeValue(value: cmtCurrentValue, from: 0...progressMax))
                     .stroke(style: StrokeStyle.init(lineWidth: CGFloat(Int(geometery.size.width / 10)), lineCap: .round))
-                    .foregroundColor(color1)
+                    .foregroundColor(colorOne)
                     .padding(CGFloat(Int(geometery.size.width / 10)) / 2)
                     .rotationEffect(Angle(degrees: Double(-225)))
                 
@@ -64,7 +64,7 @@ public struct Benchmark: View {
                     if showLabel {
                         Text(label)
                             .font(.system(size: CGFloat(Int(geometery.size.width / 8))))
-                            .foregroundColor(labelColor)
+                            .foregroundColor(gaugelabelColor)
                             .opacity(0.6)
                     }
                 }
@@ -95,7 +95,7 @@ public struct Benchmark: View {
 @available(iOS 13.0, macOS 10.15, *)
 struct Doo_a_Gauge_Previews: PreviewProvider {
     static var previews: some View {
-        Benchmark(progressVal: 45, progressMax: 180, label: "Label", color1: .red, color2: .green, counterColor: .primary, labelColor: .secondary, gaugeMinMax: .primary, showLabel: true, showMinMax: true)
+        Benchmark(progressVal: 45, progressMax: 180, label: "Label", colorOne: .red, colorTwo: .green, counterColor: .primary, gaugelabelColor: .secondary, gaugeMinMax: .primary, showLabel: true, showMinMax: true)
             .frame(width: 300)
     }
 }
