@@ -5,6 +5,7 @@ func newGaugeValue(value: CGFloat, from: ClosedRange<CGFloat>) -> CGFloat {
     return result
 }
 
+#if arch(arm64)
 @available(iOS 13.0, macOS 10.15, *)
 public struct Benchmark: View {
     
@@ -88,7 +89,7 @@ public struct Benchmark: View {
         .aspectRatio(1, contentMode: .fit)
     }
 }
-
+#endif
 
 /*
 @available(iOS 13.0, macOS 10.15, *)
