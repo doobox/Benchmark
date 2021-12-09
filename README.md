@@ -38,7 +38,7 @@ Benchmark(progress: 45, maxValue: 180, label: "Label", color1: .red, color2: .gr
 
 | Argument  | Type | Description
 | ------------- | ------------- | ------------- |
-| progress  | CGFloat  | The current gauge position. |
+| progress  | CGFloat  | Value for the current gauge position. |
 | maxValue  | CGFloat  | The maximum value of the gauge. |
 | label  | String  | The text label in the gauge. |
 | color1  | Color  | The left gauge color. |
