@@ -10,7 +10,7 @@ Xcode 11 and iOS 15 or MacOS 10.15 is required.
 
 ### Swift Package Manager
 
-* Xcode: File -> Swift Packages -> Add Package Dependenc
+* Xcode: File -> Swift Packages -> Add Package Dependencies.
 * Paste https://github.com/doobox/Benchmark.git
 
 ### Manually
