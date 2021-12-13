@@ -9,25 +9,18 @@ func newGaugeValue(value: CGFloat, from: ClosedRange<CGFloat>) -> CGFloat {
 @available(iOS 13.0, macOS 10.15, *)
 public struct Benchmark: View {
     
-    @State var progress: CGFloat
-    @State var maxValue: CGFloat
-    @State var label: String
-    @State var color1: Color
-    @State var color2: Color
-    @State var counterColor: Color
-    @State var labelColor: Color
-    @State var minMaxColor: Color
-    @State var showLabel: Bool
-    @State var showMinMax: Bool
-    
-    private var cmtCurrentValue: CGFloat {
-        if progress > maxValue {
-            return maxValue
-        }
-        return progress
-    }
+    @State var progress: CGFloat = 45
+    @State var maxValue: CGFloat = 150
+    @State var label: String = "Label"
+    @State var color1: Color = .red
+    @State var color2: Color = .green
+    @State var counterColor: Color = .primary
+    @State var labelColor: Color = .secondary
+    @State var minMaxColor: Color = .primary
+    @State var showLabel: Bool = true
+    @State var showMinMax: Bool = true
 
-    public init(progress: CGFloat, maxValue: CGFloat, label: String = "Label", color1: Color = .red, color2: Color = .green, counterColor: Color = .primary, labelColor: Color = .secondary, minMaxColor: Color = .primary, showLabel: Bool = true, showMinMax: Bool = true) {
+    public init(progress: CGFloat, maxValue: CGFloat, label: String, color1: Color, color2: Color, counterColor: Color, labelColor: Color, minMaxColor: Color, showLabel: Bool, showMinMax: Bool) {
         self.progress = progress
         self.maxValue = maxValue
         self.label = label
@@ -51,14 +44,14 @@ public struct Benchmark: View {
                     .rotationEffect(Angle(degrees: Double(-225)))
                 
                 Circle()
-                    .trim(from: 0, to: newGaugeValue(value: cmtCurrentValue, from: 0...maxValue))
+                    .trim(from: 0, to: newGaugeValue(value: progress > maxValue ? maxValue : progress, from: 0...maxValue))
                     .stroke(style: StrokeStyle.init(lineWidth: CGFloat(Int(geometery.size.width / 10)), lineCap: .round))
                     .foregroundColor(color1)
                     .padding(CGFloat(Int(geometery.size.width / 10)) / 2)
                     .rotationEffect(Angle(degrees: Double(-225)))
                 
                 VStack{
-                    Text(String(Int(cmtCurrentValue)))
+                    Text(String(Int(progress > maxValue ? maxValue : progress)))
                         .font(.system(size: CGFloat(Int(geometery.size.width / 3.5))).bold())
                         .foregroundColor(counterColor)
                     if showLabel {
