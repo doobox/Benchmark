@@ -19,7 +19,7 @@ Drag `Benchmark.swift` into your project.
 
 ## Usage
 
-### Import
+### Import.
 
 Import the `Benchmark` in the file you would like to use it: 
 
